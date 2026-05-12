@@ -1,0 +1,409 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ─── Global semantic variables ────────────────────────────────────────────── */
+:root {
+  --agro-bg: oklch(98.5% 0.007 130);
+  --agro-text: oklch(19% 0.042 146);
+  --agro-surface: oklch(95% 0.019 130);
+  --agro-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --agro-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --agro-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Footer */
+  --agro-footer-bg: oklch(16% 0.048 146);
+  --agro-footer-text: oklch(80% 0.025 146);
+
+  /* Overlays — used on sections that are always dark-green regardless of mode */
+  --agro-hero-overlay: rgba(22, 58, 24, 0.78);
+  --agro-overlay-pill-bg: rgba(255, 255, 255, 0.14);
+  --agro-overlay-pill-border: rgba(255, 255, 255, 0.28);
+  --agro-card-overlay-bg: rgba(255, 255, 255, 0.07);
+  --agro-card-overlay-border: rgba(255, 255, 255, 0.15);
+
+  /* Shadows */
+  --agro-shadow-card: 0 16px 30px rgba(42, 58, 42, 0.07);
+  --agro-shadow-image: 0 18px 36px rgba(42, 58, 42, 0.10);
+}
+
+/* ─── Design tokens ─────────────────────────────────────────────────────────── */
+@theme {
+  /* --- Primary (Forest Green Brand) --- */
+  --color-agro-primary-a0: oklch(27% 0.09 146);
+  --color-agro-primary-a10: oklch(34% 0.094 146);
+  --color-agro-primary-a20: oklch(43% 0.088 146);
+  --color-agro-primary-a30: oklch(50% 0.092 131);
+  --color-agro-primary-a40: oklch(66% 0.078 131);
+  --color-agro-primary-a50: oklch(83% 0.05 131);
+
+  /* --- Gold/Amber (CTA Accent) --- */
+  --color-agro-gold-a0: oklch(53% 0.115 65);
+  --color-agro-gold-a10: oklch(63% 0.128 66);
+  --color-agro-gold-a20: oklch(79% 0.148 84);
+  --color-agro-gold-a30: oklch(84% 0.13 86);
+  --color-agro-gold-a40: oklch(90% 0.09 87);
+  --color-agro-gold-a50: oklch(96% 0.04 93);
+
+  /* --- Secondary (Neutral Slate) --- */
+  --color-agro-secondary-a0: oklch(13% 0.02 264);
+  --color-agro-secondary-a10: oklch(20% 0.03 264);
+  --color-agro-secondary-a20: oklch(30% 0.04 264);
+  --color-agro-secondary-a30: oklch(40% 0.05 264);
+  --color-agro-secondary-a40: oklch(51% 0.06 264);
+  --color-agro-secondary-a50: oklch(64% 0.05 264);
+
+  /* --- Surface (Cream / Sage palette — adapts in dark mode) --- */
+  --color-agro-surface-a0: oklch(99.5% 0.004 130);
+  --color-agro-surface-a10: oklch(98.5% 0.007 130);
+  --color-agro-surface-a20: oklch(95% 0.019 130);
+  --color-agro-surface-a30: oklch(91% 0.02 107);
+  --color-agro-surface-a40: oklch(87% 0.028 131);
+  --color-agro-surface-a50: oklch(80% 0.034 131);
+
+  /* --- Text Tokens --- */
+  --color-agro-text-primary: oklch(19% 0.042 146);
+  --color-agro-text-secondary: oklch(27% 0.038 146);
+  --color-agro-text-muted: oklch(44% 0.025 153);
+  --color-agro-text-disabled: oklch(64% 0.012 264);
+  --color-agro-text-inverse: oklch(98.5% 0.005 146);
+
+  /* Text on always-dark-green sections (hero, contact) */
+  --color-agro-text-on-dark: oklch(92% 0.012 146);
+  --color-agro-heading-on-dark: oklch(98% 0.008 146);
+
+  /* --- Semantic State Colors --- */
+  --color-agro-success-a0: oklch(32% 0.09 157);
+  --color-agro-success-a10: oklch(62% 0.17 151);
+  --color-agro-success-a20: oklch(83% 0.11 151);
+
+  --color-agro-warning-a0: oklch(43% 0.1 62);
+  --color-agro-warning-a10: oklch(74% 0.15 80);
+  --color-agro-warning-a20: oklch(92% 0.1 92);
+
+  --color-agro-danger-a0: oklch(27% 0.09 22);
+  --color-agro-danger-a10: oklch(52% 0.2 22);
+  --color-agro-danger-a20: oklch(80% 0.12 22);
+
+  --color-agro-info-a0: oklch(26% 0.1 265);
+  --color-agro-info-a10: oklch(56% 0.19 264);
+  --color-agro-info-a20: oklch(81% 0.1 240);
+
+  /* --- Typography --- */
+  --font-agro-sans: 'Manrope', system-ui, sans-serif;
+  --font-agro-heading: 'Barlow Condensed', system-ui, sans-serif;
+  --font-agro-mono: ui-monospace, monospace;
+
+  --text-agro-xs: 0.75rem;
+  --text-agro-sm: 0.875rem;
+  --text-agro-base: 1rem;
+  --text-agro-lg: 1.125rem;
+  --text-agro-xl: 1.25rem;
+  --text-agro-2xl: 1.5rem;
+  --text-agro-3xl: 1.875rem;
+
+  --spacing-agro-xs: 0.25rem;
+  --spacing-agro-sm: 0.5rem;
+  --spacing-agro-md: 1rem;
+  --spacing-agro-lg: 1.5rem;
+  --spacing-agro-xl: 2rem;
+  --spacing-agro-2xl: 3rem;
+}
+
+/* ─── Dark mode — system preference ────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --agro-bg: oklch(14% 0.015 146);
+    --agro-text: oklch(90% 0.012 146);
+    --agro-surface: oklch(20% 0.02 146);
+
+    --color-agro-surface-a0: oklch(14% 0.015 146);
+    --color-agro-surface-a10: oklch(20% 0.02 146);
+    --color-agro-surface-a20: oklch(27% 0.025 146);
+    --color-agro-surface-a30: oklch(36% 0.022 146);
+    --color-agro-surface-a40: oklch(47% 0.018 146);
+    --color-agro-surface-a50: oklch(58% 0.014 146);
+
+    --color-agro-text-primary: oklch(90% 0.012 146);
+    --color-agro-text-secondary: oklch(80% 0.015 146);
+    --color-agro-text-muted: oklch(64% 0.012 155);
+    --color-agro-text-disabled: oklch(51% 0.006 264);
+    --color-agro-text-inverse: oklch(13% 0.02 264);
+  }
+}
+
+/* ─── Dark mode — manual override ──────────────────────────────────────────── */
+:root[data-theme="dark"] {
+  --agro-bg: oklch(14% 0.015 146);
+  --agro-text: oklch(90% 0.012 146);
+  --agro-surface: oklch(20% 0.02 146);
+
+  --color-agro-surface-a0: oklch(14% 0.015 146);
+  --color-agro-surface-a10: oklch(20% 0.02 146);
+  --color-agro-surface-a20: oklch(27% 0.025 146);
+  --color-agro-surface-a30: oklch(36% 0.022 146);
+  --color-agro-surface-a40: oklch(47% 0.018 146);
+  --color-agro-surface-a50: oklch(58% 0.014 146);
+
+  --color-agro-text-primary: oklch(90% 0.012 146);
+  --color-agro-text-secondary: oklch(80% 0.015 146);
+  --color-agro-text-muted: oklch(64% 0.012 155);
+  --color-agro-text-disabled: oklch(51% 0.006 264);
+  --color-agro-text-inverse: oklch(13% 0.02 264);
+}
+
+/* ─── Light mode — manual override ─────────────────────────────────────────── */
+:root[data-theme="light"] {
+  --agro-bg: oklch(98.5% 0.007 130);
+  --agro-text: oklch(19% 0.042 146);
+  --agro-surface: oklch(95% 0.019 130);
+
+  --color-agro-surface-a0: oklch(99.5% 0.004 130);
+  --color-agro-surface-a10: oklch(98.5% 0.007 130);
+  --color-agro-surface-a20: oklch(95% 0.019 130);
+  --color-agro-surface-a30: oklch(91% 0.02 107);
+  --color-agro-surface-a40: oklch(87% 0.028 131);
+  --color-agro-surface-a50: oklch(80% 0.034 131);
+
+  --color-agro-text-primary: oklch(19% 0.042 146);
+  --color-agro-text-secondary: oklch(27% 0.038 146);
+  --color-agro-text-muted: oklch(44% 0.025 153);
+  --color-agro-text-disabled: oklch(64% 0.012 264);
+  --color-agro-text-inverse: oklch(98.5% 0.005 146);
+}
+
+/* ─── Global base styles ────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--agro-bg);
+    color: var(--color-agro-text-primary);
+    font-family: var(--font-agro-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2 {
+    font-family: var(--font-agro-heading);
+    letter-spacing: -0.01em;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: var(--font-agro-sans);
+  }
+
+  /* ── Utility aliases ── */
+  .bg-agro-primary  { background-color: var(--color-agro-primary-a10); }
+  .bg-agro-surface  { background-color: var(--color-agro-surface-a0); }
+  .bg-agro-sage     { background-color: var(--color-agro-surface-a20); }
+  .bg-agro-dark     { background-color: var(--color-agro-primary-a0); }
+
+  .text-agro-primary   { color: var(--color-agro-primary-a10); }
+  .text-agro-muted     { color: var(--color-agro-text-muted); }
+  .text-agro-inverse   { color: var(--color-agro-text-inverse); }
+  .text-agro-on-dark   { color: var(--color-agro-text-on-dark); }
+
+  .border-agro { border-color: var(--color-agro-surface-a30); }
+
+  /* ── Buttons ── */
+  .btn-gold {
+    background-color: var(--color-agro-gold-a20);
+    color: var(--color-agro-primary-a0);
+    font-weight: 800;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    display: inline-block;
+    transition:
+      transform 160ms var(--agro-ease-out),
+      background-color 180ms ease,
+      box-shadow 180ms ease;
+    will-change: transform;
+  }
+
+  .btn-gold:hover {
+    background-color: var(--color-agro-gold-a10);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(80, 58, 10, 0.14);
+  }
+
+  .btn-gold:active {
+    transform: scale(0.97);
+  }
+
+  .btn-outline-white {
+    border: 1px solid var(--agro-overlay-pill-border);
+    color: var(--color-agro-text-inverse);
+    font-weight: 800;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    display: inline-block;
+    transition:
+      transform 160ms var(--agro-ease-out),
+      background-color 180ms ease,
+      border-color 180ms ease;
+    will-change: transform;
+  }
+
+  .btn-outline-white:hover {
+    background-color: var(--agro-overlay-pill-bg);
+    border-color: var(--color-agro-text-inverse);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-white:active {
+    transform: scale(0.97);
+  }
+
+  /* ── Icon button ── */
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--color-agro-primary-a10);
+    transition:
+      transform 160ms var(--agro-ease-out),
+      background-color 150ms ease,
+      color 150ms ease;
+    will-change: transform;
+  }
+
+  .btn-icon:hover {
+    background-color: var(--color-agro-surface-a20);
+    transform: translateY(-1px);
+  }
+
+  .btn-icon:active {
+    transform: scale(0.97);
+  }
+
+  .agro-nav-shell {
+    backdrop-filter: saturate(140%) blur(14px);
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .agro-media {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .agro-media img {
+    transition:
+      transform 700ms var(--agro-ease-out),
+      filter 450ms ease,
+      opacity 350ms ease;
+    transform: scale(1.01);
+    will-change: transform;
+  }
+
+  .agro-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%, rgba(18, 31, 18, 0.12));
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+  }
+
+  .agro-media:hover img {
+    transform: scale(1.05);
+    filter: saturate(1.05);
+  }
+
+  .agro-media:hover::after {
+    opacity: 1;
+  }
+
+  .agro-card-lift {
+    transition:
+      transform 240ms var(--agro-ease-out),
+      box-shadow 240ms ease,
+      border-color 240ms ease;
+    will-change: transform;
+  }
+
+  .agro-card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 40px rgba(42, 58, 42, 0.12);
+  }
+
+  .agro-hero-floating {
+    animation: agro-float 7s var(--agro-ease-in-out) infinite;
+  }
+
+  .agro-hero-floating:nth-child(2) {
+    animation-delay: 240ms;
+  }
+
+  [data-reveal] {
+    --reveal-delay: 0ms;
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.985);
+    filter: blur(12px);
+    transition:
+      opacity 680ms var(--agro-ease-out) var(--reveal-delay),
+      transform 680ms var(--agro-ease-out) var(--reveal-delay),
+      filter 680ms ease var(--reveal-delay);
+    will-change: opacity, transform, filter;
+  }
+
+  [data-reveal="left"] {
+    transform: translate3d(-28px, 0, 0) scale(0.985);
+  }
+
+  [data-reveal="right"] {
+    transform: translate3d(28px, 0, 0) scale(0.985);
+  }
+
+  [data-reveal="image"] {
+    transform: translate3d(0, 30px, 0) scale(1.03);
+    filter: blur(16px);
+  }
+
+  [data-reveal="line"] {
+    transform: translate3d(0, 18px, 0);
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, .btn-gold, .btn-outline-white, .btn-icon {
+      transition-duration: 0ms !important;
+      animation-duration: 0ms !important;
+    }
+
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+  }
+}
+
+@keyframes agro-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
