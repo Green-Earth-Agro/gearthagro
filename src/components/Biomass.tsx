@@ -1,12 +1,12 @@
-import biomassImage from '../assets/what_we_do/biomass.jpg';
+import biomassImage from '../assets/what_we_do/biomass.svg';
 import { staggerDelay } from '../lib/motion';
 
 export function Biomass() {
   return (
-    <section id="biomass" className="py-20.5" style={{ background: 'var(--agro-bg)' }}>
-      <div className="max-w-280 mx-auto px-[4%] grid grid-cols-1 md:grid-cols-2 gap-11 items-center">
+    <section id="biomass" className="py-16 sm:py-20.5" style={{ background: 'var(--agro-bg)' }}>
+      <div className="max-w-280 mx-auto px-[4%] grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-11 items-center">
         <figure
-          className="agro-media min-h-[430px] overflow-hidden rounded-[22px]"
+          className="agro-media min-h-[320px] sm:min-h-[430px] overflow-hidden rounded-[22px]"
           style={{
             ...staggerDelay(40),
             background: 'linear-gradient(145deg, oklch(87% 0.028 131), oklch(83% 0.05 131))',
@@ -19,7 +19,7 @@ export function Biomass() {
             alt="Palm kernel shells and bamboo biomass materials"
             loading="lazy"
             decoding="async"
-            className="block h-[430px] w-full object-cover"
+            className="block h-[320px] sm:h-[430px] w-full object-cover"
           />
         </figure>
 
@@ -36,15 +36,15 @@ export function Biomass() {
           >
             Turning agricultural by-products into useful biomass materials.
           </h2>
-          <p className="text-lg text-agro-muted mb-4 leading-relaxed">
+          <p className="text-base sm:text-lg text-agro-muted mb-4 leading-relaxed">
             Our biomass division focuses on utilizing by-products and agricultural waste streams
             that would otherwise be underused or discarded.
           </p>
-          <p className="text-lg text-agro-muted mb-7 leading-relaxed">
+          <p className="text-base sm:text-lg text-agro-muted mb-7 leading-relaxed">
             This includes palm kernel shells, bamboo chips, biomass materials, and pyrolysis
             initiatives that support a more circular agricultural ecosystem.
           </p>
-          <a href="#contact" className="btn-gold">Discuss Biomass Supply</a>
+          <a href="#contact" className="btn-gold w-full sm:w-auto text-center">Discuss Biomass Supply</a>
         </div>
       </div>
     </section>

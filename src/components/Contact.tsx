@@ -29,7 +29,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="overflow-hidden py-20.5"
+      className="overflow-hidden py-16 sm:py-20.5"
       style={{ background: 'var(--color-agro-primary-a0)' }}
     >
       <div className="max-w-280 mx-auto px-[4%]">
@@ -50,7 +50,7 @@ export function Contact() {
             Work with GreenEarth Agro.
           </h2>
           <p
-            className="mt-3 text-lg leading-relaxed"
+            className="mt-3 text-base sm:text-lg leading-relaxed"
             style={{ color: 'var(--color-agro-text-on-dark)' }}
           >
             Contact us for agro-processing partnerships, raw material supply, biomass supply,
@@ -59,7 +59,7 @@ export function Contact() {
         </div>
 
         <div
-          className="rounded-[18px] p-7 grid grid-cols-1 md:grid-cols-3 gap-7"
+          className="rounded-[18px] p-5 sm:p-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
           style={{
             ...staggerDelay(80),
             background: 'var(--agro-card-overlay-bg)',
@@ -86,9 +86,16 @@ export function Contact() {
             </ContactItem>
           </div>
 
-          <div data-reveal="line" style={staggerDelay(320)}>
+          <div data-reveal="line" style={staggerDelay(320)} className="sm:col-span-2 lg:col-span-1">
             <ContactItem Icon={Phone} label="Phone">
-              +233 249495654<br />
+              <a
+                href="tel:+233249495654"
+                className="hover:underline"
+                style={{ color: 'var(--color-agro-text-on-dark)' }}
+              >
+                +233 249495654
+              </a>
+              <br />
               {/* +352 [Insert Number] */}
             </ContactItem>
           </div>

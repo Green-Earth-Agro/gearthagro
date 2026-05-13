@@ -1,15 +1,15 @@
-import gallery1 from '../assets/gallery/IMG_20251120_101353.jpg';
-import gallery2 from '../assets/gallery/IMG_20251120_101503.jpg';
-import gallery3 from '../assets/gallery/IMG_20251120_101509.jpg';
-import gallery4 from '../assets/gallery/IMG_20251120_101519.jpg';
-import gallery5 from '../assets/gallery/IMG_20251120_101637.jpg';
-import gallery6 from '../assets/gallery/IMG_20251120_102536.jpg';
-import gallery7 from '../assets/gallery/IMG_20251120_102650.jpg';
-import gallery8 from '../assets/gallery/IMG_20251120_102714.jpg';
-import gallery9 from '../assets/gallery/IMG_20260512_143331.jpg';
-import gallery10 from '../assets/gallery/IMG_20260512_143357.jpg';
-import gallery11 from '../assets/gallery/IMG_20260512_143437.jpg';
-import gallery12 from '../assets/gallery/IMG_20260512_143527.jpg';
+import gallery1 from '../assets/gallery/IMG_20251120_101353.svg';
+import gallery2 from '../assets/gallery/IMG_20251120_101503.svg';
+import gallery3 from '../assets/gallery/IMG_20251120_101509.svg';
+import gallery4 from '../assets/gallery/IMG_20251120_101519.svg';
+import gallery5 from '../assets/gallery/IMG_20251120_101637.svg';
+import gallery6 from '../assets/gallery/IMG_20251120_102536.svg';
+import gallery7 from '../assets/gallery/IMG_20251120_102650.svg';
+import gallery8 from '../assets/gallery/IMG_20251120_102714.svg';
+import gallery9 from '../assets/gallery/IMG_20260512_143331.svg';
+import gallery10 from '../assets/gallery/IMG_20260512_143357.svg';
+import gallery11 from '../assets/gallery/IMG_20260512_143437.svg';
+import gallery12 from '../assets/gallery/IMG_20260512_143527.svg';
 import { staggerDelay } from '../lib/motion';
 
 const GALLERY_ITEMS = [
@@ -44,7 +44,7 @@ const PLACEHOLDER_GRADIENTS = [
 
 export function Gallery() {
   return (
-    <section className="py-20.5" style={{ background: 'var(--color-agro-surface-a0)' }}>
+    <section className="py-16 sm:py-20.5" style={{ background: 'var(--color-agro-surface-a0)' }}>
       <div className="max-w-280 mx-auto px-[4%]">
         <div className="max-w-190 mb-11" data-reveal="line">
           <span
@@ -64,11 +64,11 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
           {GALLERY_ITEMS.map(({ src, label }, i) => (
             <figure
               key={label}
-              className="agro-media agro-card-lift h-52.5 overflow-hidden rounded-2xl"
+              className="agro-media agro-card-lift h-60 sm:h-52.5 lg:h-56 xl:h-52.5 overflow-hidden rounded-2xl"
               style={{ ...staggerDelay(i * 70), background: PLACEHOLDER_GRADIENTS[i] }}
               data-reveal="image"
             >

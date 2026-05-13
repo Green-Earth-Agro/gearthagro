@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
-import heroImage1 from '../assets/hero/image_1.jpg';
-import heroImage2 from '../assets/hero/image_2.jpg';
-import heroImage3 from '../assets/hero/image_3.jpg';
+import heroImage1 from '../assets/hero/image_1.svg';
+import heroImage2 from '../assets/hero/image_2.svg';
+import heroImage3 from '../assets/hero/image_3.svg';
 import { staggerDelay } from '../lib/motion';
 
 const HERO_IMAGES = [
@@ -41,7 +41,7 @@ export function Hero() {
 
   return (
     <section
-      className="min-h-[78vh] flex flex-col items-center justify-between"
+      className="min-h-[88svh] md:min-h-[78vh] flex flex-col items-center justify-between"
       style={{
         background: [
           `linear-gradient(var(--agro-hero-overlay), var(--agro-hero-overlay))`,
@@ -50,10 +50,10 @@ export function Hero() {
       }}
     >
       <div className="max-w-280 mx-auto w-full px-[4%] flex-1 flex items-center">
-        <div className="grid w-full items-center gap-10 py-22.5 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,0.7fr)]">
-          <div className="max-w-215">
+        <div className="grid w-full items-center gap-8 md:gap-10 py-16 sm:py-20 lg:py-22.5 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,0.7fr)]">
+          <div className="max-w-none lg:max-w-215">
             <span
-              className="inline-block mb-5 px-3.5 py-2 rounded-full text-sm font-semibold tracking-[0.4px]"
+              className="inline-block mb-5 max-w-full px-3.5 py-2 rounded-full text-[13px] sm:text-sm leading-snug font-semibold tracking-[0.4px]"
               style={{
                 ...staggerDelay(0),
                 background: 'var(--agro-overlay-pill-bg)',
@@ -66,10 +66,10 @@ export function Hero() {
             </span>
 
             <h1
-              className="font-bold leading-[1.02] mb-6"
+              className="font-bold leading-[0.98] sm:leading-[1.02] mb-5 sm:mb-6"
               style={{
                 ...staggerDelay(90),
-                fontSize: 'clamp(48px, 6.5vw, 80px)',
+                fontSize: 'clamp(2.8rem, 10vw, 5rem)',
                 color: 'var(--color-agro-heading-on-dark)',
               }}
               data-reveal="line"
@@ -78,7 +78,7 @@ export function Hero() {
             </h1>
 
             <p
-              className="text-[1.2rem] leading-[1.7] mb-9"
+              className="text-lg sm:text-[1.2rem] leading-[1.65] sm:leading-[1.7] mb-8 sm:mb-9"
               style={{
                 ...staggerDelay(180),
                 color: 'var(--color-agro-text-on-dark)',
@@ -90,12 +90,12 @@ export function Hero() {
               value-added processing, and biomass utilization into one integrated supply chain.
             </p>
 
-            <div className="flex flex-wrap gap-4" style={staggerDelay(270)} data-reveal="line">
-              <a href="#what-we-do" className="btn-gold">Explore What We Do</a>
-              <a href="#contact" className="btn-outline-white">Contact Us</a>
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3.5 sm:gap-4 max-w-sm sm:max-w-none" style={staggerDelay(270)} data-reveal="line">
+              <a href="#what-we-do" className="btn-gold w-full sm:w-auto text-center">Explore What We Do</a>
+              <a href="#contact" className="btn-outline-white w-full sm:w-auto text-center">Contact Us</a>
             </div>
 
-            <div className="mt-8 flex items-center gap-3" style={staggerDelay(360)} data-reveal="line">
+            <div className="mt-7 sm:mt-8 flex flex-wrap items-center gap-3" style={staggerDelay(360)} data-reveal="line">
               <button
                 type="button"
                 aria-label="Show previous hero image"
@@ -131,9 +131,9 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="hidden lg:grid gap-4">
+          <div className="grid max-w-2xl mx-auto w-full grid-cols-2 gap-3 sm:gap-4 lg:max-w-none lg:grid-cols-1">
             <figure
-              className="agro-media agro-hero-floating rounded-[24px] overflow-hidden"
+              className="agro-media agro-hero-floating col-span-2 lg:col-span-1 rounded-[24px] overflow-hidden"
               style={{
                 ...staggerDelay(200),
                 background: 'var(--agro-card-overlay-bg)',
@@ -147,7 +147,7 @@ export function Hero() {
                 alt={secondaryImage.alt}
                 loading="lazy"
                 decoding="async"
-                className="block h-56 w-full object-cover"
+                className="block h-44 sm:h-56 w-full object-cover"
               />
             </figure>
             <figure
@@ -165,7 +165,7 @@ export function Hero() {
                 alt={tertiaryImage.alt}
                 loading="lazy"
                 decoding="async"
-                className="block h-44 w-full object-cover"
+                className="block h-36 sm:h-44 w-full object-cover"
               />
             </figure>
           </div>

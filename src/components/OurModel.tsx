@@ -17,7 +17,7 @@ const STEPS: Step[] = [
 
 export function OurModel() {
   return (
-    <section id="model" className="py-20.5 bg-agro-sage">
+    <section id="model" className="py-16 sm:py-20.5 bg-agro-sage">
       <div className="max-w-280 mx-auto px-[4%]">
         <div className="max-w-190 mb-11" data-reveal="line">
           <span
@@ -39,7 +39,7 @@ export function OurModel() {
         </div>
 
         {/* Desktop: horizontal flow with arrows */}
-        <div className="hidden md:flex items-stretch gap-0">
+        <div className="hidden xl:flex items-stretch gap-0">
           {STEPS.map(({ label, Icon }, i) => (
             <div
               key={label}
@@ -78,7 +78,7 @@ export function OurModel() {
         </div>
 
         {/* Mobile: vertical list */}
-        <div className="md:hidden flex flex-col gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 xl:hidden">
           {STEPS.map(({ label, Icon }, i) => (
             <div
               key={label}

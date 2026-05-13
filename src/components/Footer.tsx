@@ -7,7 +7,7 @@ export function Footer() {
         color: 'var(--agro-footer-text)',
       }}
     >
-      <div className="max-w-280 mx-auto px-[4%]" data-reveal="line">
+      <div className="max-w-280 mx-auto px-[4%]">
         © {new Date().getFullYear()} GreenEarth Agro Industries Limited. All rights reserved.
       </div>
     </footer>

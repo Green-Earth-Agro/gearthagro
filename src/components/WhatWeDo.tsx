@@ -1,7 +1,7 @@
 import { Check } from 'lucide-react';
-import processingImage from '../assets/what_we_do/agro_processing.jpg';
-import biomassImage from '../assets/what_we_do/biomass.jpg';
-import farmImage from '../assets/what_we_do/farm.jpg';
+import processingImage from '../assets/what_we_do/agro_processing.svg';
+import biomassImage from '../assets/what_we_do/biomass.svg';
+import farmImage from '../assets/what_we_do/farm.svg';
 import { staggerDelay } from '../lib/motion';
 
 interface ServiceCardProps {
@@ -18,7 +18,7 @@ function ServiceCard({ image, imageFallback, title, description, bullets }: Serv
       className="agro-card-lift bg-agro-surface rounded-[18px] overflow-hidden"
       style={{ border: '1px solid var(--color-agro-surface-a30)', boxShadow: 'var(--agro-shadow-card)' }}
     >
-      <figure className="agro-media h-52.5" style={{ background: imageFallback }}>
+      <figure className="agro-media h-48 sm:h-52.5" style={{ background: imageFallback }}>
         <img
           src={image}
           alt={title}
@@ -27,14 +27,14 @@ function ServiceCard({ image, imageFallback, title, description, bullets }: Serv
           className="block h-full w-full object-cover"
         />
       </figure>
-      <div className="p-7">
+      <div className="p-5 sm:p-7">
         <h3
-          className="text-2xl font-bold mb-3"
+          className="text-[1.35rem] sm:text-2xl font-bold mb-3"
           style={{ color: 'var(--color-agro-primary-a10)' }}
         >
           {title}
         </h3>
-        <p className="mb-4 text-agro-muted leading-relaxed">{description}</p>
+        <p className="mb-4 text-base sm:text-[1rem] text-agro-muted leading-relaxed">{description}</p>
         <ul className="space-y-2">
           {bullets.map((item) => (
             <li key={item} className="flex items-start gap-2.5 text-sm" style={{ color: 'var(--color-agro-text-secondary)' }}>
@@ -79,7 +79,7 @@ export function WhatWeDo() {
   ];
 
   return (
-    <section id="what-we-do" className="py-20.5" style={{ background: 'var(--agro-bg)' }}>
+    <section id="what-we-do" className="py-16 sm:py-20.5" style={{ background: 'var(--agro-bg)' }}>
       <div className="max-w-280 mx-auto px-[4%]">
         <div className="max-w-190 mb-11" data-reveal="line">
           <span
@@ -100,7 +100,7 @@ export function WhatWeDo() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {services.map((s, index) => (
             <div key={s.title} data-reveal="image" style={staggerDelay(index * 90)}>
               <ServiceCard {...s} />

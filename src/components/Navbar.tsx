@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logo from '../assets/logo/agro_logo.png';
+import logo from '../assets/logo/agro_logo.svg';
 import { ThemeToggle } from './ThemeToggle';
 
 const NAV_LINKS = [
@@ -18,7 +18,7 @@ export function Navbar() {
       className="bg-agro-surface agro-nav-shell sticky top-0 z-50"
       style={{ borderBottom: '1px solid var(--color-agro-surface-a30)' }}
     >
-      <div className="max-w-280 mx-auto px-[4%] flex items-center justify-between py-4.5">
+      <div className="max-w-280 mx-auto px-[4%] flex items-center justify-between gap-3 py-3.5 sm:py-4.5">
         <a
           href="/"
           className="flex items-center gap-3 min-w-0"
@@ -29,7 +29,7 @@ export function Navbar() {
             className="h-11 w-11 shrink-0 object-contain"
           />
           <span
-            className="text-[22px] font-extrabold tracking-[0.5px] leading-none"
+            className="text-[18px] sm:text-[22px] font-extrabold tracking-[0.5px] leading-none"
             style={{ fontFamily: 'var(--font-agro-heading)', color: 'var(--color-agro-primary-a10)' }}
           >
             GreenEarth Agro
@@ -40,7 +40,7 @@ export function Navbar() {
           {/* Desktop nav */}
           <nav
             aria-label="Main navigation"
-            className="hidden md:flex gap-6 text-sm font-semibold"
+            className="hidden lg:flex gap-6 text-sm font-semibold"
             style={{ color: 'var(--color-agro-text-secondary)' }}
           >
             {NAV_LINKS.map(([href, label]) => (
@@ -58,7 +58,7 @@ export function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden flex flex-col gap-1.25 p-2 -mr-2"
+            className="lg:hidden flex flex-col gap-1.25 p-2 -mr-2"
             aria-expanded={open}
             aria-label={open ? 'Close menu' : 'Open menu'}
             onClick={() => setOpen(!open)}
@@ -92,7 +92,7 @@ export function Navbar() {
       {open && (
         <nav
           aria-label="Mobile navigation"
-          className="md:hidden"
+          className="lg:hidden"
           style={{ borderTop: '1px solid var(--color-agro-surface-a30)' }}
         >
           {NAV_LINKS.map(([href, label]) => (
