@@ -1,19 +1,13 @@
 import { useEffect, useState } from 'react';
+import type { CSSProperties } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 type Theme = 'light' | 'dark';
 
 function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') {
-    return 'light';
-  }
-
-  const stored = localStorage.getItem('agro-theme');
-  if (stored === 'light' || stored === 'dark') {
-    return stored;
-  }
-
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // Theme switching is currently disabled from the main navigation,
+  // so the site defaults to light mode instead of following system preference.
+  return 'light';
 }
 
 function applyTheme(theme: Theme) {
@@ -21,7 +15,12 @@ function applyTheme(theme: Theme) {
   localStorage.setItem('agro-theme', theme);
 }
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+  className?: string;
+  style?: CSSProperties;
+}
+
+export function ThemeToggle({ className = '', style }: ThemeToggleProps = {}) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
@@ -35,8 +34,9 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="btn-icon"
+      className={`btn-icon ${className}`.trim()}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      style={style}
     >
       {theme === 'dark' ? <Sun size={18} strokeWidth={2} /> : <Moon size={18} strokeWidth={2} />}
     </button>

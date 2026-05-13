@@ -1,8 +1,12 @@
 import { Check } from 'lucide-react';
-import processingImage from '../assets/what_we_do/agro_processing.svg';
-import biomassImage from '../assets/what_we_do/biomass.svg';
-import farmImage from '../assets/what_we_do/farm.svg';
 import { staggerDelay } from '../lib/motion';
+
+const FARMING_IMAGE =
+  'https://images.pexels.com/photos/36667248/pexels-photo-36667248.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1600';
+const PROCESSING_IMAGE =
+  'https://images.pexels.com/photos/36397988/pexels-photo-36397988.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1600';
+const BIOMASS_IMAGE =
+  'https://images.unsplash.com/photo-1756731503087-8d9b5b3093ac?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=1600';
 
 interface ServiceCardProps {
   image: string;
@@ -56,21 +60,21 @@ function ServiceCard({ image, imageFallback, title, description, bullets }: Serv
 export function WhatWeDo() {
   const services: ServiceCardProps[] = [
     {
-      image: farmImage,
+      image: FARMING_IMAGE,
       imageFallback: 'linear-gradient(145deg, oklch(83% 0.05 131), oklch(66% 0.078 131))',
       title: 'Farming & Sourcing',
       description: 'We cultivate our own farms while sourcing additional raw materials from local smallholder farmers.',
       bullets: ['Own farming operations', 'Smallholder farmer network', 'Pre-financing opportunities', 'Stable market access'],
     },
     {
-      image: processingImage,
+      image: PROCESSING_IMAGE,
       imageFallback: 'linear-gradient(145deg, oklch(87% 0.028 131), oklch(83% 0.05 131))',
       title: 'Agro Processing',
       description: 'We transform agricultural raw materials into higher-value products for local and regional markets.',
       bullets: ['Palm-based processing', 'Cooking oil production', 'Cassava processing', 'Value-added products'],
     },
     {
-      image: biomassImage,
+      image: BIOMASS_IMAGE,
       imageFallback: 'linear-gradient(145deg, oklch(95% 0.019 130), oklch(87% 0.028 131))',
       title: 'Biomass',
       description: 'We utilize agricultural by-products and waste streams to create additional value through biomass solutions.',

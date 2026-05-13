@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import logo from '../assets/logo/agro_logo.svg';
-import { ThemeToggle } from './ThemeToggle';
 
 const NAV_LINKS = [
   ['#what-we-do', 'What We Do'],
@@ -47,14 +46,12 @@ export function Navbar() {
               <a
                 key={href}
                 href={href}
-                className="transition-colors hover:text-agro-primary"
+                className="agro-nav-link"
               >
                 {label}
               </a>
             ))}
           </nav>
-
-          <ThemeToggle />
 
           {/* Mobile hamburger */}
           <button
@@ -95,14 +92,14 @@ export function Navbar() {
           className="lg:hidden"
           style={{ borderTop: '1px solid var(--color-agro-surface-a30)' }}
         >
-          {NAV_LINKS.map(([href, label]) => (
-            <a
-              key={href}
-              href={href}
-              className="block px-[4%] py-3.5 text-sm font-semibold"
-              style={{
-                color: 'var(--color-agro-text-secondary)',
-                borderBottom: '1px solid var(--color-agro-surface-a30)',
+            {NAV_LINKS.map(([href, label]) => (
+              <a
+                key={href}
+                href={href}
+                className="block px-[4%] py-3.5 text-sm font-semibold transition-colors hover:text-agro-primary"
+                style={{
+                  color: 'var(--color-agro-text-secondary)',
+                  borderBottom: '1px solid var(--color-agro-surface-a30)',
               }}
               onClick={() => setOpen(false)}
             >
