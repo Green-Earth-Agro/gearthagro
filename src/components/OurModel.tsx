@@ -8,7 +8,7 @@ interface Step {
 }
 
 const STEPS: Step[] = [
-  { label: 'Own Farms & Smallholder Farmers', Icon: Sprout },
+  { label: 'Smallholder farmers engagement', Icon: Sprout },
   { label: 'Raw Material Collection', Icon: Truck },
   { label: 'Agro Processing', Icon: Factory },
   { label: 'Value-Added Products', Icon: PackageCheck },
@@ -30,7 +30,7 @@ export function OurModel() {
             className="font-bold leading-[1.1] mt-3"
             style={{ fontSize: 'clamp(32px, 4vw, 48px)', color: 'var(--color-agro-primary-a0)' }}
           >
-            From farms and farmers to finished products.
+            From farmers to finished products.
           </h2>
           <p className="mt-3 text-lg text-agro-muted">
             Our model connects agricultural production, farmer sourcing, processing infrastructure,
