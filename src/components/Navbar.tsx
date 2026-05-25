@@ -4,6 +4,7 @@ import logo from '../assets/logo/agro_logo.svg';
 const NAV_LINKS = [
   ['#what-we-do', 'What We Do'],
   ['#model', 'Our Model'],
+  ['#land-leasing', 'Land Leasing'],
   ['#biomass', 'Biomass'],
   ['#impact', 'Impact'],
   ['#contact', 'Contact'],

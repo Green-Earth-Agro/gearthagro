@@ -1,7 +1,5 @@
 import { staggerDelay } from '../lib/motion';
-
-const BIOMASS_SECTION_IMAGE =
-  'https://commons.wikimedia.org/wiki/Special:FilePath/Bamboo%20cutter.jpg';
+import biomassImage from '../assets/what_we_do/biomass.png';
 
 export function Biomass() {
   return (
@@ -17,8 +15,8 @@ export function Biomass() {
           data-reveal="left"
         >
           <img
-            src={BIOMASS_SECTION_IMAGE}
-            alt="Worker cutting bamboo in Ghana for biomass-related use"
+            src={biomassImage}
+            alt="Biomass material for agricultural by-product utilization"
             loading="lazy"
             decoding="async"
             className="block h-[320px] sm:h-[430px] w-full object-cover"

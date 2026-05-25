@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { WhatWeDo } from './components/WhatWeDo';
 import { OurModel } from './components/OurModel';
+import { LandLeasing } from './components/LandLeasing';
 import { Biomass } from './components/Biomass';
 import { Impact } from './components/Impact';
 import { Contact } from './components/Contact';
@@ -19,6 +20,7 @@ export default function App() {
         <Hero />
         <WhatWeDo />
         <OurModel />
+        <LandLeasing />
         <Biomass />
         <Impact />
         <Contact />

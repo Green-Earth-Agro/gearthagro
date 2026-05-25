@@ -53,8 +53,8 @@ export function Contact() {
             className="mt-3 text-base sm:text-lg leading-relaxed"
             style={{ color: 'var(--color-agro-text-on-dark)' }}
           >
-            Contact us for agro-processing partnerships, raw material supply, biomass supply,
-            farmer sourcing, or general enquiries.
+            Contact us for agro-processing partnerships, raw material supply, land leasing,
+            biomass supply, farmer sourcing, or general enquiries.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export function Contact() {
           <div data-reveal="line" style={staggerDelay(160)}>
             <ContactItem Icon={Building2} label="Company">
               GreenEarth Agro Industries Limited<br />
-              Ghana &amp; Luxembourg
+              Ghana
             </ContactItem>
           </div>
 
