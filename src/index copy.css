@@ -15,7 +15,7 @@
   --agro-footer-text: oklch(80% 0.025 146);
 
   /* Overlays — used on sections that are always dark-green regardless of mode */
-  --agro-hero-overlay: rgb(29, 199, 103);
+  --agro-hero-overlay: rgb(15, 72, 40);
   --agro-overlay-pill-bg: rgba(255, 255, 255, 0.14);
   --agro-overlay-pill-border: rgba(255, 255, 255, 0.28);
   --agro-card-overlay-bg: rgba(255, 255, 255, 0.07);
@@ -184,27 +184,55 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     font-family: var(--font-agro-heading);
     letter-spacing: -0.01em;
   }
 
-  h3, h4, h5, h6 {
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-agro-sans);
   }
 
   /* ── Utility aliases ── */
-  .bg-agro-primary  { background-color: var(--color-agro-primary-a10); }
-  .bg-agro-surface  { background-color: var(--color-agro-surface-a0); }
-  .bg-agro-sage     { background-color: var(--color-agro-surface-a20); }
-  .bg-agro-dark     { background-color: var(--color-agro-primary-a0); }
+  .bg-agro-primary {
+    background-color: var(--color-agro-primary-a10);
+  }
 
-  .text-agro-primary   { color: var(--color-agro-primary-a10); }
-  .text-agro-muted     { color: var(--color-agro-text-muted); }
-  .text-agro-inverse   { color: var(--color-agro-text-inverse); }
-  .text-agro-on-dark   { color: var(--color-agro-text-on-dark); }
+  .bg-agro-surface {
+    background-color: var(--color-agro-surface-a0);
+  }
 
-  .border-agro { border-color: var(--color-agro-surface-a30); }
+  .bg-agro-sage {
+    background-color: var(--color-agro-surface-a20);
+  }
+
+  .bg-agro-dark {
+    background-color: var(--color-agro-primary-a0);
+  }
+
+  .text-agro-primary {
+    color: var(--color-agro-primary-a10);
+  }
+
+  .text-agro-muted {
+    color: var(--color-agro-text-muted);
+  }
+
+  .text-agro-inverse {
+    color: var(--color-agro-text-inverse);
+  }
+
+  .text-agro-on-dark {
+    color: var(--color-agro-text-on-dark);
+  }
+
+  .border-agro {
+    border-color: var(--color-agro-surface-a30);
+  }
 
   /* ── Buttons ── */
   .btn-gold {
@@ -454,7 +482,10 @@
       scroll-behavior: auto;
     }
 
-    *, .btn-gold, .btn-outline-white, .btn-icon {
+    *,
+    .btn-gold,
+    .btn-outline-white,
+    .btn-icon {
       transition-duration: 0ms !important;
       animation-duration: 0ms !important;
     }
@@ -468,7 +499,9 @@
 }
 
 @keyframes agro-float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate3d(0, 0, 0);
   }
 

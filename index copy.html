@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/src/assets/logo/agro_logo.svg" />
+  <link rel="apple-touch-icon" href="/src/assets/logo/agro_logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenEarth Agro Industries — Agro Processing &amp; Biomass in Ghana</title>
+  <meta name="description"
+    content="Ghana-based agro-processing company combining own farming operations, smallholder sourcing, value-added processing, and biomass utilization." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Manrope:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('agro-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+      } catch (e) { }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

@@ -13,9 +13,8 @@
     <script>
       (function () {
         try {
-          var stored = localStorage.getItem('agro-theme');
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('agro-theme', 'light');
         } catch (e) {}
       })();
     </script>
