@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/gea-ops-0499ae", "destination": "/console.html" },
+    { "source": "/gea-ops-0499ae/:path*", "destination": "/console.html" }
+  ]
+}

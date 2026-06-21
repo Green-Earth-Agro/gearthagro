@@ -128,6 +128,36 @@
     --color-agro-text-muted: oklch(64% 0.012 155);
     --color-agro-text-disabled: oklch(51% 0.006 264);
     --color-agro-text-inverse: oklch(13% 0.02 264);
+
+    /* ── Accent palettes for dark surfaces (staff console only; marketing is pinned light) ──
+       Primary is a SOLID FILL (button / active nav) carrying dark `text-inverse`, plus
+       accent text (a20). On dark backgrounds the brand green must brighten so the dark
+       label reads and the fill stands off the surface. */
+    --color-agro-primary-a0: oklch(66% 0.12 150);   /* button / active-nav fill */
+    --color-agro-primary-a10: oklch(70% 0.12 150);
+    --color-agro-primary-a20: oklch(77% 0.10 150);  /* accent text on dark surfaces */
+
+    /* State colors are PILLS (bg = a20 tint, text = a0) and icons (a10). Invert the tint
+       direction for dark: a20 → deep tint, a0 → light label, a10 stays a vivid mid. */
+    --color-agro-success-a0: oklch(82% 0.12 151);
+    --color-agro-success-a10: oklch(68% 0.17 151);
+    --color-agro-success-a20: oklch(30% 0.06 157);
+
+    --color-agro-warning-a0: oklch(86% 0.10 86);
+    --color-agro-warning-a10: oklch(78% 0.15 80);
+    --color-agro-warning-a20: oklch(32% 0.06 62);
+
+    --color-agro-danger-a0: oklch(81% 0.11 22);
+    --color-agro-danger-a10: oklch(68% 0.18 22);
+    --color-agro-danger-a20: oklch(32% 0.08 22);
+
+    --color-agro-info-a0: oklch(83% 0.09 240);
+    --color-agro-info-a10: oklch(66% 0.17 264);
+    --color-agro-info-a20: oklch(31% 0.07 265);
+
+    --color-agro-gold-a0: oklch(72% 0.13 70);
+    --color-agro-gold-a10: oklch(80% 0.14 78);
+    --color-agro-gold-a20: oklch(86% 0.12 84);
   }
 }
 
@@ -149,6 +179,31 @@
   --color-agro-text-muted: oklch(64% 0.012 155);
   --color-agro-text-disabled: oklch(51% 0.006 264);
   --color-agro-text-inverse: oklch(13% 0.02 264);
+
+  /* Accent palettes for dark surfaces — mirrors the system-pref dark block above. */
+  --color-agro-primary-a0: oklch(66% 0.12 150);
+  --color-agro-primary-a10: oklch(70% 0.12 150);
+  --color-agro-primary-a20: oklch(77% 0.10 150);
+
+  --color-agro-success-a0: oklch(82% 0.12 151);
+  --color-agro-success-a10: oklch(68% 0.17 151);
+  --color-agro-success-a20: oklch(30% 0.06 157);
+
+  --color-agro-warning-a0: oklch(86% 0.10 86);
+  --color-agro-warning-a10: oklch(78% 0.15 80);
+  --color-agro-warning-a20: oklch(32% 0.06 62);
+
+  --color-agro-danger-a0: oklch(81% 0.11 22);
+  --color-agro-danger-a10: oklch(68% 0.18 22);
+  --color-agro-danger-a20: oklch(32% 0.08 22);
+
+  --color-agro-info-a0: oklch(83% 0.09 240);
+  --color-agro-info-a10: oklch(66% 0.17 264);
+  --color-agro-info-a20: oklch(31% 0.07 265);
+
+  --color-agro-gold-a0: oklch(72% 0.13 70);
+  --color-agro-gold-a10: oklch(80% 0.14 78);
+  --color-agro-gold-a20: oklch(86% 0.12 84);
 }
 
 /* ─── Light mode — manual override ─────────────────────────────────────────── */

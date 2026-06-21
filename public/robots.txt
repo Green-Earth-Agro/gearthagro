@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Staff console — keep crawlers off it. (Obscurity only; real auth is enforced server-side.)
+Disallow: /gea-ops-0499ae
+Disallow: /console.html

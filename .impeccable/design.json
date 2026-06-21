@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-20T00:00:00.000Z",
+  "title": "Design System: GreenEarth Agro",
+  "extensions": {
+    "colorMeta": {
+      "primary-a10": { "role": "primary", "displayName": "Cultivated Green", "canonical": "oklch(34% 0.094 146)", "tonalRamp": ["oklch(20% 0.06 146)", "oklch(27% 0.09 146)", "oklch(34% 0.094 146)", "oklch(43% 0.088 146)", "oklch(50% 0.092 131)", "oklch(66% 0.078 131)", "oklch(83% 0.05 131)", "oklch(94% 0.025 131)"] },
+      "gold-a20": { "role": "tertiary", "displayName": "Earthen Gold", "canonical": "oklch(79% 0.148 84)", "tonalRamp": ["oklch(40% 0.09 65)", "oklch(53% 0.115 65)", "oklch(63% 0.128 66)", "oklch(79% 0.148 84)", "oklch(84% 0.13 86)", "oklch(90% 0.09 87)", "oklch(96% 0.04 93)", "oklch(98% 0.02 95)"] },
+      "surface-a20": { "role": "neutral", "displayName": "Cream Sage Wash", "canonical": "oklch(95% 0.019 130)", "tonalRamp": ["oklch(14% 0.015 146)", "oklch(20% 0.02 146)", "oklch(36% 0.022 146)", "oklch(58% 0.014 146)", "oklch(80% 0.034 131)", "oklch(91% 0.02 107)", "oklch(95% 0.019 130)", "oklch(99.5% 0.004 130)"] },
+      "text-primary": { "role": "neutral", "displayName": "Ink Green", "canonical": "oklch(19% 0.042 146)", "tonalRamp": ["oklch(19% 0.042 146)", "oklch(27% 0.038 146)", "oklch(44% 0.025 153)", "oklch(58% 0.018 153)", "oklch(64% 0.012 264)", "oklch(80% 0.015 146)", "oklch(90% 0.012 146)", "oklch(98.5% 0.005 146)"] },
+      "secondary-a30": { "role": "secondary", "displayName": "Slate", "canonical": "oklch(40% 0.05 264)", "tonalRamp": ["oklch(13% 0.02 264)", "oklch(20% 0.03 264)", "oklch(30% 0.04 264)", "oklch(40% 0.05 264)", "oklch(51% 0.06 264)", "oklch(64% 0.05 264)", "oklch(80% 0.03 264)", "oklch(92% 0.015 264)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles and section H2s. Barlow Condensed, applied automatically to h1/h2." },
+      "title": { "displayName": "Title", "purpose": "Card and subsection headings. Manrope (h3 and below)." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy. Manrope, capped at 65-75ch." },
+      "label": { "displayName": "Label / Eyebrow", "purpose": "Short uppercase gold section eyebrows and metadata." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 16px 30px rgba(42, 58, 42, 0.07)", "purpose": "Default resting elevation for cards." },
+      { "name": "image-rest", "value": "0 18px 36px rgba(42, 58, 42, 0.10)", "purpose": "Framed imagery." },
+      { "name": "card-hover", "value": "0 24px 40px rgba(42, 58, 42, 0.12)", "purpose": "Card hover, paired with translateY(-4px)." },
+      { "name": "button-hover", "value": "0 14px 28px rgba(80, 58, 10, 0.14)", "purpose": "Warm amber-tinted lift under gold buttons." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Default easing for hovers, reveals, and state transitions." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Symmetric motion such as the hero float animation." },
+      { "name": "ease-drawer", "value": "cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Drawer and panel slide motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single high-intent action. Earthen gold with deep forest text; lifts on hover.",
+      "html": "<button class=\"ds-btn-gold\">Work with us</button>",
+      "css": ".ds-btn-gold { background: oklch(79% 0.148 84); color: oklch(27% 0.09 146); font-weight: 800; font-size: 15px; padding: 14px 24px; border: none; border-radius: 8px; cursor: pointer; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background-color 180ms ease, box-shadow 180ms ease; } .ds-btn-gold:hover { background: oklch(63% 0.128 66); transform: translateY(-1px); box-shadow: 0 14px 28px rgba(80,58,10,0.14); } .ds-btn-gold:focus-visible { outline: 2px solid oklch(53% 0.115 65); outline-offset: 2px; } .ds-btn-gold:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action on dark green sections. Translucent white border, inverse text.",
+      "html": "<button class=\"ds-btn-outline\">Learn more</button>",
+      "css": ".ds-btn-outline { background: transparent; color: oklch(98.5% 0.005 146); font-weight: 800; font-size: 15px; padding: 14px 24px; border: 1px solid rgba(255,255,255,0.28); border-radius: 8px; cursor: pointer; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background-color 180ms ease, border-color 180ms ease; } .ds-btn-outline:hover { background: rgba(255,255,255,0.14); border-color: oklch(98.5% 0.005 146); transform: translateY(-1px); } .ds-btn-outline:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Near-white content card with the signature 18px radius; flat at rest, lifts on hover.",
+      "html": "<article class=\"ds-card\"><h3>Own Farming</h3><p>Vertically integrated cultivation across our estates.</p></article>",
+      "css": ".ds-card { background: oklch(99.5% 0.004 130); color: oklch(19% 0.042 146); border: 1px solid oklch(91% 0.02 107); border-radius: 18px; padding: 28px; box-shadow: 0 16px 30px rgba(42,58,42,0.07); transition: transform 240ms cubic-bezier(0.23,1,0.32,1), box-shadow 240ms ease, border-color 240ms ease; } .ds-card:hover { transform: translateY(-4px); box-shadow: 0 24px 40px rgba(42,58,42,0.12); } .ds-card h3 { font-family: Manrope, system-ui, sans-serif; font-size: 1.5rem; font-weight: 700; margin: 0 0 12px; color: oklch(34% 0.094 146); } .ds-card p { font-family: Manrope, system-ui, sans-serif; margin: 0; line-height: 1.625; color: oklch(44% 0.025 153); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Top-nav link with an animated gold underline that grows from the left on hover.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">What We Do</a>",
+      "css": ".ds-nav-link { position: relative; font-family: Manrope, system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; text-decoration: none; color: oklch(27% 0.038 146); transition: color 180ms ease; } .ds-nav-link::after { content: \"\"; position: absolute; left: 0; bottom: -0.45rem; width: 100%; height: 2px; border-radius: 999px; background: oklch(63% 0.128 66); transform: scaleX(0.35); transform-origin: left center; opacity: 0; transition: transform 220ms cubic-bezier(0.23,1,0.32,1), opacity 220ms ease; } .ds-nav-link:hover, .ds-nav-link:focus-visible { color: oklch(34% 0.094 146); } .ds-nav-link:hover::after, .ds-nav-link:focus-visible::after { transform: scaleX(1); opacity: 1; }"
+    },
+    {
+      "name": "Proof Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Pill-shaped proof point for dark green sections; translucent fill, 44px touch target.",
+      "html": "<span class=\"ds-chip\">12,000+ farmers sourced</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; min-height: 44px; border-radius: 999px; padding: 12px 16px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.08); color: oklch(92% 0.012 146); font-family: Manrope, system-ui, sans-serif; font-size: 0.9rem; font-weight: 700; line-height: 1.2; letter-spacing: 0.01em; }"
+    },
+    {
+      "name": "Section Eyebrow",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Short uppercase gold label that sits directly above a section heading.",
+      "html": "<span class=\"ds-eyebrow\">Contact</span>",
+      "css": ".ds-eyebrow { font-family: Manrope, system-ui, sans-serif; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: oklch(53% 0.115 65); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Verdant Standard",
+    "overview": "GreenEarth Agro is a Ghana-based agro-processing company that competes internationally, and the design system carries that exact tension: global-grade industrial rigor rooted unmistakably in West African soil. The surface is built from deep forest greens and a warm cream-to-sage neutral family, with amber gold reserved for the moments that ask for action. Structure is the message: clean hierarchy, deliberate pacing, and generous breathing room are how a B2B buyer or investor reads operational competence before they read a single claim. The system is calm but never cold; warmth comes from the landscape and from soft, green-tinted elevation rather than hard drop shadows. It is progressive without being sterile: scientific confidence and forward momentum, not minimalist chill.",
+    "keyCharacteristics": [
+      "Forest-green authority with a warm cream/sage neutral base",
+      "Amber gold as a rare, high-intent accent (CTAs only)",
+      "Condensed display type for scale, humanist sans for reading",
+      "Soft, green-tinted elevation; flat at rest, lifts on interaction",
+      "Evidence-led layout: structure communicates credibility",
+      "Automatic light/dark theme via prefers-color-scheme and a manual data-theme override"
+    ],
+    "rules": [
+      { "name": "The One Action Color Rule", "body": "Amber gold is for things you click: primary buttons, nav-hover underlines, and short uppercase eyebrows. It never fills a panel, never tints a background, never becomes decoration.", "section": "colors" },
+      { "name": "The Tinted Neutral Rule", "body": "Every neutral leans green (chroma 0.004-0.05 around hue 130-155). #000 and #fff are forbidden. A gray that reads as truly neutral is a bug.", "section": "colors" },
+      { "name": "The On-Dark Rule", "body": "On the always-dark-green sections (hero, contact, footer), text uses only text-on-dark / heading-on-dark. Never drop a light-surface text token onto a dark green panel.", "section": "colors" },
+      { "name": "The Condensed-Heading Rule", "body": "h1 and h2 are always Barlow Condensed; h3 and below are always Manrope. This split is the typographic signature.", "section": "typography" },
+      { "name": "The Eyebrow Rule", "body": "Section eyebrows are short, uppercase, gold, letter-spaced ~1.2px, and sit directly above their heading. They label; they never form sentences.", "section": "typography" },
+      { "name": "The Lift-on-Intent Rule", "body": "Surfaces are flat at rest. Elevation increases only on hover/focus, always accompanied by a small upward translate (-1px buttons, -4px cards).", "section": "elevation" },
+      { "name": "The Green-Shadow Rule", "body": "Shadows are tinted toward the brand (greenish rgba(42,58,42,...), or warm rgba(80,58,10,...) under gold). A neutral-black shadow is a bug.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use the agro-* design tokens for every color, never literal hex/oklch in components.",
+      "Do keep amber gold for actions and eyebrows only (The One Action Color Rule).",
+      "Do set h1/h2 in Barlow Condensed and everything smaller in Manrope.",
+      "Do tint every neutral toward the brand green; cream and sage, never flat gray.",
+      "Do keep surfaces flat at rest and lift them on hover/focus with a small translate and a green-tinted shadow.",
+      "Do prove claims with specifics (tonnage, farmer count, regions, capacity) placed near every headline.",
+      "Do use text-on-dark / heading-on-dark on the hero, contact, and footer bands.",
+      "Do respect prefers-reduced-motion and meet WCAG 2.1 AA contrast."
+    ],
+    "donts": [
+      "Don't ship generic SaaS/startup cream: white backgrounds, Inter, pale blue-green gradients, or floating blob shapes.",
+      "Don't use farm-kitsch (barn illustrations, rustic wood textures, tractor icons) that undercuts industrial scale.",
+      "Don't build cluttered toolbar-heavy enterprise-GIS layouts or dense dark-mode data walls.",
+      "Don't use #000 or #fff, or any untinted gray text.",
+      "Don't let gold fill a background or become decoration.",
+      "Don't use border-left/border-right greater than 1px as a colored accent stripe.",
+      "Don't apply hard neutral-black drop shadows; shadows are soft and green/amber-tinted.",
+      "Don't use em dashes in copy."
+    ]
+  }
+}
