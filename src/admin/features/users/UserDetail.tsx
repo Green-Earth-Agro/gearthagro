@@ -10,10 +10,10 @@ import { PageHeader } from '../../components/PageHeader';
 import { QueryBoundary } from '../../components/QueryBoundary';
 import { StatusPill } from '../../components/StatusPill';
 import { Switch } from '../../components/Switch';
-import { ROLE_LABELS } from '../../types/auth';
+import { ROLE_LABELS, positionForRole } from '../../types/auth';
 import type { UserPosition, UserRole } from '../../types/auth';
 import { getUserDetails, updateUserAccess } from './api';
-import { POSITION_LABELS, POSITION_OPTIONS, ROLE_OPTIONS } from './types';
+import { POSITION_LABELS, ROLE_OPTIONS } from './types';
 import type { UserDetail as UserDetailType } from './types';
 
 export function UserDetail() {
@@ -79,16 +79,18 @@ function ProfileCard({
 }) {
   const [editing, setEditing] = useState(false);
   const [role, setRole] = useState<UserRole>(user.role);
-  const [position, setPosition] = useState<UserPosition>(user.position);
   const [isActive, setIsActive] = useState(user.is_active);
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
+  // Position is never edited directly: it is fully determined by role (user =
+  // farmer, any staff role = staff). Saving a change also repairs any legacy row
+  // whose stored position disagrees with its role.
+  const position: UserPosition = positionForRole(role);
   const dirty = role !== user.role || position !== user.position || isActive !== user.is_active;
 
   const startEdit = () => {
     setRole(user.role);
-    setPosition(user.position);
     setIsActive(user.is_active);
     setErr(null);
     setEditing(true);
@@ -173,17 +175,9 @@ function ProfileCard({
                 </select>
               </Field>
               <Field label="Position">
-                <select
-                  value={position}
-                  onChange={(e) => setPosition(e.target.value as UserPosition)}
-                  className={selectClass}
-                >
-                  {POSITION_OPTIONS.map((p) => (
-                    <option key={p} value={p}>
-                      {POSITION_LABELS[p]}
-                    </option>
-                  ))}
-                </select>
+                <span className="font-agro-sans text-agro-sm text-agro-text-muted">
+                  {POSITION_LABELS[position]} (set by role)
+                </span>
               </Field>
               <Field label="Active">
                 <Switch checked={isActive} onChange={setIsActive} label="Active" />

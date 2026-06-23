@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { Loader2, AlertCircle, Inbox } from 'lucide-react';
+import { Loader2, AlertCircle, Inbox, WifiOff, ShieldAlert, SearchX } from 'lucide-react';
+import { describeError, type ErrorTone } from '../lib/errors';
 
 interface QueryBoundaryProps {
   loading: boolean;
@@ -14,6 +15,15 @@ interface QueryBoundaryProps {
 function Centered({ children }: { children: ReactNode }) {
   return <div className="flex flex-col items-center gap-3 py-20 text-center">{children}</div>;
 }
+
+// Icon + accent per error category. Network is a recoverable blip (warning tone),
+// not the alarm-red of a hard failure; denial is a wall, not a retry.
+const TONE: Record<ErrorTone, { Icon: typeof AlertCircle; className: string }> = {
+  network: { Icon: WifiOff, className: 'text-agro-warning-a10' },
+  denied: { Icon: ShieldAlert, className: 'text-agro-danger-a10' },
+  missing: { Icon: SearchX, className: 'text-agro-text-disabled' },
+  generic: { Icon: AlertCircle, className: 'text-agro-danger-a10' },
+};
 
 // Standard loading / error / empty handling so every workspace behaves the same.
 export function QueryBoundary({
@@ -35,16 +45,18 @@ export function QueryBoundary({
   }
 
   if (error) {
+    const described = describeError(error);
+    const { Icon, className } = TONE[described.tone];
     return (
       <Centered>
-        <AlertCircle className="size-7 text-agro-danger-a10" strokeWidth={1.75} />
-        <div>
+        <Icon className={`size-7 ${className}`} strokeWidth={1.75} />
+        <div className="max-w-xs">
           <p className="font-agro-sans text-agro-base font-semibold text-agro-text-primary">
-            Could not load this
+            {described.title}
           </p>
-          <p className="mt-1 font-agro-sans text-agro-sm text-agro-text-muted">{error}</p>
+          <p className="mt-1 font-agro-sans text-agro-sm text-agro-text-muted">{described.hint}</p>
         </div>
-        {onRetry && (
+        {onRetry && described.retryable && (
           <button
             type="button"
             onClick={onRetry}
@@ -53,6 +65,15 @@ export function QueryBoundary({
             Try again
           </button>
         )}
+        {/* Raw message kept for debugging, out of the user's way. */}
+        <details className="mt-1 max-w-xs">
+          <summary className="cursor-pointer list-none font-agro-sans text-agro-xs text-agro-text-disabled transition-colors hover:text-agro-text-muted">
+            Technical details
+          </summary>
+          <p className="mt-1 break-words font-agro-sans text-agro-xs text-agro-text-disabled">
+            {error}
+          </p>
+        </details>
       </Centered>
     );
   }

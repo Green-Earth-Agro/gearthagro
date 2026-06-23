@@ -17,6 +17,14 @@ export const STAFF_ROLES: readonly UserRole[] = ['loan_officer', 'admin', 'super
 export const isStaffRole = (role: UserRole | null | undefined): role is UserRole =>
   !!role && STAFF_ROLES.includes(role);
 
+// Position is a deterministic projection of role, never set independently: the
+// base `user` role is always a farmer, every elevated role is always staff. The
+// DB enforces the same equivalence as a CHECK constraint
+// (database/security/10_enforce_position_role_invariant.sql), so this is the one
+// place the UI should compute position from a chosen role.
+export const positionForRole = (role: UserRole): UserPosition =>
+  role === 'user' ? 'farmer' : 'staff';
+
 export interface RolePermissions {
   // Loan Management
   canViewAllLoans: boolean;

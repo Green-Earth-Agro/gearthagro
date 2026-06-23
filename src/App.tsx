@@ -10,6 +10,7 @@ import { Impact } from './components/Impact';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsOfService } from './components/TermsOfService';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
 function useHashRoute() {
@@ -28,15 +29,25 @@ export default function App() {
   useScrollReveal();
   const hash = useHashRoute();
   const isPrivacy = hash === '#/privacy';
+  const isTerms = hash === '#/terms';
 
   useEffect(() => {
-    if (isPrivacy) window.scrollTo(0, 0);
-  }, [isPrivacy]);
+    if (isPrivacy || isTerms) window.scrollTo(0, 0);
+  }, [isPrivacy, isTerms]);
 
   if (isPrivacy) {
     return (
       <>
         <PrivacyPolicy />
+        <Footer />
+      </>
+    );
+  }
+
+  if (isTerms) {
+    return (
+      <>
+        <TermsOfService />
         <Footer />
       </>
     );

@@ -22,110 +22,156 @@ function Bullets({ items }: { items: React.ReactNode[] }) {
 
 const SECTIONS: { title: string; body: React.ReactNode }[] = [
   {
-    title: 'Information We Collect',
+    title: 'Acceptance of Terms',
+    body: (
+      <p>
+        By accessing or using the app, you confirm that you have read, understood, and agree to be
+        bound by these Terms and by our Privacy Policy. These Terms apply to every person who uses the
+        services, whether as a farmer or as staff.
+      </p>
+    ),
+  },
+  {
+    title: 'Eligibility',
+    body: (
+      <p>
+        You must be at least 18 years old, or the age of legal majority where you live, and able to
+        enter into a binding contract to use the services. By using the app you represent that you meet
+        these requirements and that the information you provide is accurate.
+      </p>
+    ),
+  },
+  {
+    title: 'Your Account',
     body: (
       <>
-        <p>We may collect the following types of information:</p>
+        <p>When you create an account, you agree to:</p>
         <Bullets
           items={[
-            <><strong>Personal Information</strong> (such as name, email address, phone number) if you voluntarily provide it.</>,
-            <><strong>Device Information</strong> (such as device type, operating system, and IP address).</>,
-            <><strong>Usage Data</strong> (such as pages visited, clicks, and app interactions).</>,
-            <><strong>Location Data</strong> (only if you grant permission in the app).</>,
+            'Provide accurate and current information and keep it up to date',
+            'Keep your login credentials and one-time codes confidential',
+            'Take responsibility for all activity that happens under your account',
+            'Tell us promptly if you suspect unauthorized use of your account',
           ]}
         />
       </>
     ),
   },
   {
-    title: 'Use of Information',
+    title: 'Using the Services',
+    body: (
+      <p>
+        The app includes features such as farm support, land leasing, a produce market, and learning
+        content. We grant you a personal, limited, non-transferable, and revocable licence to use the
+        app for these purposes. We may add, change, or remove features at any time.
+      </p>
+    ),
+  },
+  {
+    title: 'Farm Support',
+    body: (
+      <p>
+        Farm support features let you request assistance, but submitting a request does not guarantee
+        approval. Every request is subject to an eligibility review, our assessment, and the specific
+        program terms presented to you, which you must accept separately. You are responsible for
+        meeting your obligations under any agreement you accept.
+      </p>
+    ),
+  },
+  {
+    title: 'Land Leasing and Produce Market',
+    body: (
+      <p>
+        The land leasing and produce market features connect you with opportunities and other parties.
+        Unless we state otherwise in writing, any lease or sale is an agreement between you and the
+        other party. You are responsible for confirming the details, quality, price, and suitability of
+        any arrangement before you commit.
+      </p>
+    ),
+  },
+  {
+    title: 'Acceptable Use',
     body: (
       <>
-        <p>We use collected information to:</p>
+        <p>You agree not to:</p>
         <Bullets
           items={[
-            'Provide and improve our services',
-            'Personalize your experience',
-            'Respond to your support requests',
-            'Send you updates, new features, and promotions',
-            'Monitor app performance and security, and understand how people use it',
+            'Use the services for any unlawful, fraudulent, or harmful purpose',
+            'Provide false information or impersonate another person',
+            'Interfere with, disrupt, or attempt to gain unauthorized access to the services',
+            'Copy, scrape, or misuse content or data from the app',
           ]}
         />
       </>
     ),
   },
   {
-    title: 'Sharing of Information',
-    body: (
-      <>
-        <p>We do not sell or rent your personal data. We may share information only with:</p>
-        <Bullets
-          items={[
-            'Service providers that support our app (such as analytics or hosting services)',
-            'Authorities if required by law',
-          ]}
-        />
-      </>
-    ),
-  },
-  {
-    title: 'Data Retention and Protection',
+    title: 'Content and Intellectual Property',
     body: (
       <p>
-        We keep your information only as long as we need it for the purposes described in this
-        policy. We use reasonable administrative, technical, and physical safeguards to protect your
-        data.
+        The app, its content, and its branding belong to us or our licensors and are protected by law.
+        Content you submit remains yours, but you grant us a licence to use it as needed to operate and
+        improve the services. You are responsible for the content you provide and must have the right to
+        share it.
       </p>
     ),
   },
   {
-    title: 'Cookies and Tracking',
+    title: 'Third-Party Services',
     body: (
       <p>
-        We may use cookies or similar technologies to improve your experience and the app's
-        performance. You can disable cookies in your device or browser settings.
+        The app may rely on or link to third-party services, such as payment, messaging, or hosting
+        providers. Their own terms and privacy practices apply, and we are not responsible for them.
       </p>
     ),
   },
   {
-    title: 'Children’s Privacy',
+    title: 'Disclaimers',
     body: (
       <p>
-        Our services are not intended for children under 13, and we do not knowingly collect data
-        from children.
+        The services are provided on an "as is" and "as available" basis without warranties of any kind,
+        whether express or implied. We do not guarantee that the services will be uninterrupted,
+        error-free, or secure, or that any result, including approval of a support request or a
+        successful sale, will be achieved.
       </p>
     ),
   },
   {
-    title: 'Your Rights',
-    body: (
-      <>
-        <p>Depending on your region, you may have the right to:</p>
-        <Bullets
-          items={[
-            'Request access, correction, or deletion of your data',
-            'Withdraw consent at any time',
-            'Disable app permissions through your device settings',
-          ]}
-        />
-      </>
-    ),
-  },
-  {
-    title: 'Third-Party Links',
+    title: 'Limitation of Liability',
     body: (
       <p>
-        Our app or website may link to other sites. We are not responsible for the privacy practices
-        of those sites.
+        To the fullest extent permitted by law, we are not liable for any indirect, incidental, or
+        consequential loss, or for loss of profit, data, or goodwill, arising from your use of the
+        services. Nothing in these Terms excludes liability that cannot be excluded under applicable law.
       </p>
     ),
   },
   {
-    title: 'Changes to this Policy',
+    title: 'Suspension and Termination',
     body: (
       <p>
-        We may update this Privacy Policy occasionally. We will post the current version on this page
-        with a new effective date.
+        We may suspend or close your account if you breach these Terms, if required by law, or to protect
+        the services and other users. You may stop using the app and request that we delete your account
+        at any time. Some provisions, by their nature, survive termination.
+      </p>
+    ),
+  },
+  {
+    title: 'Changes to the Services and These Terms',
+    body: (
+      <p>
+        We may update these Terms from time to time. When we do, we will post the current version on this
+        page with a new effective date. If you continue to use the services after a change takes effect,
+        you accept the updated Terms.
+      </p>
+    ),
+  },
+  {
+    title: 'Governing Law',
+    body: (
+      <p>
+        These Terms are governed by the laws of the Republic of Ghana, and any dispute relating to them
+        or to the services is subject to the jurisdiction of the courts of Ghana.
       </p>
     ),
   },
@@ -133,7 +179,7 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     title: 'Contact Us',
     body: (
       <p>
-        If you have any questions about this Privacy Policy, you may contact us at{' '}
+        If you have any questions about these Terms, you may contact us at{' '}
         <a
           href="mailto:info@gearthagro.com"
           className={`font-semibold underline decoration-[color:var(--color-agro-gold-a10)] decoration-2 underline-offset-2 ${focusRing}`}
@@ -147,7 +193,7 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
   },
 ];
 
-export function PrivacyPolicy() {
+export function TermsOfService() {
   return (
     <div style={{ background: 'var(--agro-bg)' }} className="min-h-screen">
       {/* Top bar — mirrors the site Navbar shell */}
@@ -196,7 +242,7 @@ export function PrivacyPolicy() {
               color: 'var(--color-agro-text-primary)',
             }}
           >
-            Privacy Policy
+            Terms of Service
           </h1>
           <p className="mt-3 text-sm font-semibold" style={{ color: 'var(--color-agro-text-muted)' }}>
             Effective {EFFECTIVE_DATE}
@@ -206,9 +252,10 @@ export function PrivacyPolicy() {
             className="mt-7 text-lg leading-relaxed"
             style={{ color: 'var(--color-agro-text-secondary)' }}
           >
-            GreenEarth Agro Industries Limited (“we”, “our”, or “us”) operates this mobile app and
-            website. This policy explains how we collect, use, and protect your information when you
-            use our services.
+            These Terms of Service ("Terms") govern your use of the GreenEarth Agro mobile app and
+            related services operated by GreenEarth Agro Industries Limited ("we", "our", or "us"). By
+            creating an account or using the app, you agree to these Terms. If you do not agree, please
+            do not use the services.
           </p>
 
           {/* Numbered clauses */}
